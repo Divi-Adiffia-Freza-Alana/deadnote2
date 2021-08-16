@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.Dividev.deadnote.ui.profile.profile"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/gray"
+        android:orientation="horizontal"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingTop="60dp"
+        android:gravity="">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/logo">
+
+        </ImageView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="20dp"
+            android:layout_marginLeft="20dp">
+            <TextView
+                android:id="@+id/txt_nama_hd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NAMA USER"
+                android:textColor="@color/black"></TextView>
+            <TextView
+                android:id="@+id/txt_email_hd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NAMA USER"
+                android:layout_marginTop="5dp"
+                android:textSize="12dp"></TextView>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="50dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp">
+        <TextView
+            android:id="@+id/txt_nama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="20dp"
+            android:drawableStart="@drawable/ic_baseline_people_alt_24"
+            android:drawableTint="@color/primary"
+            android:drawablePadding="20dp"
+          ></TextView>
+        <TextView
+            android:id="@+id/txt_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="20dp"
+            android:drawableStart="@drawable/ic_baseline_email_24"
+            android:drawableTint="@color/primary"
+            android:drawablePadding="20dp"
+            android:layout_marginTop="20dp"></TextView>
+        <TextView
+            android:id="@+id/txt_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="20dp"
+            android:drawableStart="@drawable/ic_baseline_phone_24"
+            android:drawableTint="@color/primary"
+            android:drawablePadding="20dp"
+            android:layout_marginTop="20dp"></TextView>
+    </LinearLayout>
+</LinearLayout>

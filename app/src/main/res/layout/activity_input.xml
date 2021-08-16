@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:backgroundTint="@color/primary"
+        android:orientation="vertical"
+        android:background="@color/primary">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:layout_marginTop="20dp"
+            android:text="Input Form"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_gravity="center">
+
+        </TextView>
+
+    </LinearLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:startIconDrawable="@drawable/ic_baseline_list_24"
+        app:startIconContentDescription="email"
+        android:hint="Kegiatan"
+        android:textColorHint="@color/black"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:background="@color/white"
+            android:backgroundTint="@color/white"
+            android:id="@+id/et_kegiatan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:startIconDrawable="@drawable/ic_baseline_check_box_24"
+        app:startIconContentDescription="email"
+        android:hint="Status"
+        android:textColorHint="@color/black"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:background="@color/white"
+            android:backgroundTint="@color/white"
+            android:id="@+id/et_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <LinearLayout
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        >
+        <ImageButton
+            android:id="@+id/btn_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_calendar_today_24"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="-10dp"
+
+            />
+        <TextView
+            android:id="@+id/et_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pilih Tanggal"
+            ></TextView>
+
+
+
+
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/input_btn"
+        android:backgroundTint="@color/primary"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content"
+        android:text="SIMPAN"
+        app:strokeColor="@color/white"
+        android:layout_gravity="center"
+
+        android:textColor="@color/white"
+        android:padding="15dp"
+        android:layout_marginTop="20dp"
+        style="?attr/materialButtonOutlinedStyle"
+        />
+
+</LinearLayout>

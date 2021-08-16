@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "280416828665",
+    "project_id": "deadnote-93952",
+    "storage_bucket": "deadnote-93952.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:280416828665:android:64fae59d1305035ad33628",
+        "android_client_info": {
+          "package_name": "com.Dividev.deadnote"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "280416828665-ts6bi7itbcbe0lgssneq8i9iu1qrq08j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB60TLAta08Gg_rjNmJfB4gr18De6En71c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "280416828665-ts6bi7itbcbe0lgssneq8i9iu1qrq08j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
