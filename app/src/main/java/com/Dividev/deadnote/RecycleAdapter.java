@@ -19,12 +19,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.deadnote.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.List;
 
 public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHolder> {
+    FirebaseAuth fAuth;
+    String userId;
+
     private List<note> mList;
     private Activity activity;
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
@@ -45,6 +49,8 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
 
     @Override
     public void onBindViewHolder(@NonNull RecycleAdapter.MyViewHolder holder, int position) {
+        fAuth = FirebaseAuth.getInstance();
+        userId = fAuth.getCurrentUser().getUid();
         note nt = mList.get(position);
 
         holder.tv_kegiatan.setText("Kegiatan :"+nt.getKegiatan());
@@ -53,11 +59,12 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
         holder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 AlertDialog.Builder builder = new AlertDialog.Builder(activity);
                 builder.setPositiveButton("Ya", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        database.child("test").child(nt.getKey()).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
+                        database.child("users").child(userId).child(nt.getKey()).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
                                 Toast.makeText(activity, "Berhasil dihapus",Toast.LENGTH_SHORT).show();

@@ -21,14 +21,18 @@ import androidx.fragment.app.DialogFragment;
 import com.example.deadnote.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
 public class InputActivity extends DialogFragment {
+    FirebaseAuth fAuth;
+    String userId;
     ImageButton button_date;
     Button minput_btn;
     TextView et_date,et_kegiatan,et_status;
@@ -48,6 +52,10 @@ public class InputActivity extends DialogFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_input, container, false);
+
+        fAuth = FirebaseAuth.getInstance();
+        userId = fAuth.getCurrentUser().getUid();
+
 
         button_date = (ImageButton)view.findViewById(R.id.btn_date);
         et_kegiatan = (TextView)view.findViewById(R.id.et_kegiatan);
@@ -95,7 +103,7 @@ public class InputActivity extends DialogFragment {
                 else {
 
                     if(pilih.equals("Tambah")){
-                        database.child("test").push().setValue(new note(_kegiatan,_status,_tanggal)).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        database.child("users").child(userId).push().setValue(new note(_kegiatan,_status,_tanggal)).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
                                 Toast.makeText(view.getContext(),"Data Tersimpan",Toast.LENGTH_SHORT).show();
@@ -108,7 +116,7 @@ public class InputActivity extends DialogFragment {
                             }
                         });
                     }else if(pilih.equals("Ubah")){
-                        database.child("test").child(key).setValue(new note(_kegiatan,_status,_tanggal)).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        database.child("users").child(userId).child(key).setValue(new note(_kegiatan,_status,_tanggal)).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
                                 Toast.makeText(view.getContext(),"Data berhasil diubah",Toast.LENGTH_SHORT).show();

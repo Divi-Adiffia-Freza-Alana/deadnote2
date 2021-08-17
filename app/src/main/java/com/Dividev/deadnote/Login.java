@@ -61,10 +61,10 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            Toast.makeText(Login.this,"Login Sucess", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Login.this,"Login Berhasil", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(),MainActivity.class));
                         }else{
-                            Toast.makeText(Login.this,"error" + task.getException(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Login.this,"Login Gagal", Toast.LENGTH_SHORT).show();
                             mload.setVisibility(View.GONE);
                         }
                     }

@@ -17,6 +17,7 @@ import com.Dividev.deadnote.InputActivity;
 import com.example.deadnote.R;
 import com.Dividev.deadnote.note;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -26,6 +27,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
+    FirebaseAuth fAuth;
+    String userId;
     FloatingActionButton fab_add;
     RecycleAdapter recycleAdapter;
     DatabaseReference database;
@@ -35,6 +38,8 @@ public class HomeFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+        fAuth = FirebaseAuth.getInstance();
+        userId = fAuth.getCurrentUser().getUid();
         database = FirebaseDatabase.getInstance().getReference();
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         fab_add = (FloatingActionButton)root.findViewById(R.id.fab_add);
@@ -55,7 +60,7 @@ public class HomeFragment extends Fragment {
     }
     private void  showData(){
 
-        database.child("test").addValueEventListener(new ValueEventListener() {
+        database.child("users").child(userId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 listnote = new ArrayList<>();

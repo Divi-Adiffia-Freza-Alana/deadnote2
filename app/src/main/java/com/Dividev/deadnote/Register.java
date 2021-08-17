@@ -59,6 +59,7 @@ public class Register extends AppCompatActivity {
                     memail.setError("email is required");
                     return;
                 }
+
                 if(TextUtils.isEmpty(password)){
                     mpassword.setError("password is required");
                     return;
